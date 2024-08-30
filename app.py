@@ -7,6 +7,7 @@ api = "ENTER YOUR API KEY OF NUMVERIFY.COM"
 def validate_number(number):
     try:
         url = f"https://apilayer.net/api/validate?access_key={api}&number={number}&country_code=&format=1"
+        print("")
         print(f"Processing number: {number}")
         response = requests.get(url)
         response.raise_for_status()
@@ -16,9 +17,9 @@ def validate_number(number):
         return None
 
 def display_formatted_response(json_response):
-    print(" ")
+    print("")
     print("-" * 40)
-    print(" ")
+    print("")
     print(f"Number Status: {'Valid' if json_response.get('valid') else 'Invalid'}")
     print(f"Number: {json_response.get('number')}")
     print(f"Local Format: {json_response.get('local_format')}")
@@ -29,9 +30,8 @@ def display_formatted_response(json_response):
     print(f"Location: {json_response.get('location') or 'Not Found'}")
     print(f"Carrier: {json_response.get('carrier') or 'Not Found'}")
     print(f"Line Type: {json_response.get('line_type').capitalize() if json_response.get('line_type') else 'Not Found'}")
-    print(" ")
+    print("")
     print("-" * 40)
-    print(" ")
 
 def main():
     try:
@@ -65,7 +65,11 @@ def main():
                     ])
                 time.sleep(1)
 
-        print("Processing completed. Check output.csv for results.")
+        print("")
+        print("Processing completed.")
+        print("")
+        print("Check output.csv for results.")
+        print("")
 
     except Exception as e:
         print(f"An error occurred: {e}")
