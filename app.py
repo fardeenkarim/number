@@ -2,7 +2,7 @@ import csv
 import time
 import requests
 
-api = "0b926b848f32587fc8115ee0b2b026ed"
+api = "ENTER YOUR API KEY OF NUMVERIFY.COM"
 
 def validate_number(number):
     try:
